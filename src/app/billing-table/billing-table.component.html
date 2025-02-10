@@ -12,7 +12,9 @@
       <label for="itemPrice">Price:</label>
       <input type="number" id="itemPrice" [(ngModel)]="newItem.price" placeholder="Enter price">
     </div>
-    <button (click)="addItem()">Add Item</button>
+    <div class="button-container">
+      <button (click)="addItem()">Add Item</button>
+    </div>
   
     <table>
       <thead>
@@ -33,16 +35,10 @@
       </tbody>
     </table>
   
-    <!-- <div class="total">
-      <strong>Grand Total:</strong> {{ getTotal() | currency }}
-    </div> -->
-
     <div class="total">
-        <strong>Grand Total:</strong> {{ getTotal() | currency }}
-      </div>
-      <div class="total">
-        <strong>Average Total Per Item:</strong> {{ getAverageTotal() | currency }}
-      </div>
-      
-
+      <strong>Grand Total:</strong> {{ getTotal() | currency }}
+    </div>
+    <div class="total">
+      <strong>Average Total Per Item:</strong> {{ getAverageTotal() | currency }}
+    </div>
   </div>
