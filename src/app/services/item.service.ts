@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root' // ✅ This makes the service globally available
+  providedIn: 'root'
 })
 export class ItemService {
-  private apiUrl = 'http://localhost:8080/api/items'; // ✅ Backend URL
+  private apiUrl = 'http://localhost:8080/api/items';  // API endpoint
 
   constructor(private http: HttpClient) {}
 
   getItems(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl); // ✅ Fetch items from backend
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

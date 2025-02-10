@@ -8,17 +8,16 @@ import { ItemService } from '../../services/item.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-  private itemService = inject(ItemService); // ✅ Inject ItemService
+  private itemService = inject(ItemService);
   items: any[] = [];
 
   constructor() {
-    this.loadItems();
+    this.loadItems();  // Load data when component starts
   }
 
   loadItems() {
     this.itemService.getItems().subscribe(data => {
       this.items = data;
-      console.log("Items from backend:", this.items);
     });
   }
 }
