@@ -1,0 +1,48 @@
+<div class="billing-container">
+    <h2>Billing Application</h2>
+    <div class="form-group">
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" [(ngModel)]="newItem.name" placeholder="Enter item name">
+    </div>
+    <div class="form-group">
+      <label for="itemQuantity">Quantity:</label>
+      <input type="number" id="itemQuantity" [(ngModel)]="newItem.quantity" placeholder="Enter quantity">
+    </div>
+    <div class="form-group">
+      <label for="itemPrice">Price:</label>
+      <input type="number" id="itemPrice" [(ngModel)]="newItem.price" placeholder="Enter price">
+    </div>
+    <button (click)="addItem()">Add Item</button>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td>{{ item.quantity * item.price | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- <div class="total">
+      <strong>Grand Total:</strong> {{ getTotal() | currency }}
+    </div> -->
+
+    <div class="total">
+        <strong>Grand Total:</strong> {{ getTotal() | currency }}
+      </div>
+      <div class="total">
+        <strong>Average Total Per Item:</strong> {{ getAverageTotal() | currency }}
+      </div>
+      
+
+  </div>
